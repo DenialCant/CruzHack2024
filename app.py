@@ -11,7 +11,6 @@ def home():
 
 @app.route('/results/')
 def results():
-    print(transcript_results)
     return render_template('transcripts.html', transcript_results=transcript_results)
 
 @app.route('/yt_transcribe/', methods=('GET', 'POST'))
