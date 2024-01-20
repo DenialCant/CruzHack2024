@@ -19,10 +19,10 @@ def yt_transcribe():
         if 'yt_url' in request.form:
             title = request.form['yt_url']
 
-            file_name = yt_to_mp3(title)
+            file_name, name = yt_to_mp3(title)
             if file_name != 0:
                 tran_rs = (audio_to_text(file_name))
-                transcript_results.append({'title': title, 'content': tran_rs})
+                transcript_results.append({'title': name, 'content': tran_rs})
                 os.remove(file_name)
             else:
                 flash('Error: YouTube Link is not working')
