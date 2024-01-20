@@ -1,15 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="mini-body-title">{% block title %} Transcribe a YouTube Video {% endblock %}</div>
+    {% if transcript_results|length == 0 %}
     <form method="post">
-        <label for="yt_url">YouTube URL</label>
-        <br>
         <input class="url-input-field" type="text" name="yt_url"
-               placeholder="YouTube Link"
+               placeholder="YouTube URL"
                value="{{ request.form['title'] }}"></input>
         <br>
-
-        <button class="main-button" type="submit">Transcribe</button>
+        <div class="mid-holder flex-hori">
+            <button class="main-button" type="submit">Transcribe</button>
+        </div>
     </form>
+    {% else %}
+        {% for transcript_result in transcript_results %}
+            <div class='result_card'>
+                <div class="result_card_top">
+                    {{ transcript_result['title'] }}
+                </div>
+                <div class="result_card_mid"></div>
+                <div class="result_card_bot">
+                    <div class="result_card_bot_left">
+                        Transcription
+                    </div>
+                    <div class="result_card_bot_right">
+                        {{ transcript_result['content'] }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    <form method="post">
+        <div class="mid-holder flex-hori">
+            <button class="main-button" type="submit">Return</button>
+        </div>
+    </form>
+    {% endif %}
 {% endblock %}

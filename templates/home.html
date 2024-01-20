@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="mini-body-title">{% block title %} Welcome to Video Transcriber {% endblock %}</div>
-    <div class='box'>
-        <p>This website will Transcribe videos!</p>
+    <div class="mini-body-title-holder mid-holder flex-hori">
+        <div class="mini-body-title">
+            {% block title %} Welcome to Video Transcriber {% endblock %}
+        </div>
+    </div>
+    <div class="mid-holder flex-hori">
+        <a href="{{ url_for('yt_transcribe') }}">
+            <button class="main-big-button" type="submit">Go</button>
+        </a>
     </div>
 {% endblock %}

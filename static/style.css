@@ -8,7 +8,7 @@
 
 @font-face{font-family: WebFont; src: url('/static/fonts/Comfortaa.ttf');}
 
-html{min-width: 440px; scroll-behavior: smooth;}
+html{min-width: 440px; scroll-behavior: smooth; background-color: var(--c1);}
 body{
 	font-family: WebFont; cursor: default;
 	background: var(--c1); color: #FFF;
@@ -33,7 +33,7 @@ body::-webkit-scrollbar {display: none;}
 .normal-text{font-size: 14px; line-height: 20px;}
 .vertical-space{height: 2px; margin: 10px 0px 10px 0px; background-color: #FFFFFF;}
 
-.nav-bar{width: 100%; display: inline-block; font-size: 24px; line-height: 60px;
+/*.nav-bar{width: 100%; display: inline-block; font-size: 24px; line-height: 60px;
 	padding: 4px 0px 4px 0px;}
 .nav-element{font-size: 20px; line-height: 24px; padding: 10px;
 	background-color: var(--c3);
@@ -42,11 +42,19 @@ body::-webkit-scrollbar {display: none;}
 	transition: 0.4s;
 }
 .nav-element:hover{background-color: var(--c9);}
-.nav-text{text-decoration: none; color: #FFFFFF;}
+.nav-text{text-decoration: none; color: #FFFFFF;}*/
 
-.flex-vert{flex-direction: column;}
+.logo-holder{display: flex; justify-content: center;
+	width: 100%; padding: 100px 0px 20px 0px;
+}
+.logo{width: 200px; height: 200px;}
 
-.mini-body-title{width: 100%; font-size: 20px; line-height: 40px;}
+.flex-vert{display: flex; flex-direction: column;}
+.flex-hori{display: flex; flex-direction: row;}
+.mid-holder{justify-content: center;}
+
+.mini-body-title-holder{width: 100%;}
+.mini-body-title{font-size: 20px; line-height: 40px;}
 
 .result_card{width: 100%; background-color: var(--c3); padding: 10px; border-radius: 4px;
 	display: flex; flex-direction: column; margin: 4px 0px;}
@@ -64,9 +72,14 @@ body::-webkit-scrollbar {display: none;}
 	border: 1px solid #ccc;
 	border-radius: 4px;
 }
-.main-button{background-color: var(--c3); border: none; padding: 10px;
+.main-button{background-color: var(--c3); border: none; padding: 10px; font-size: 16px;
 	color: #FFF; border-radius: 4px; transition: 0.4s;}
 .main-button:hover{background-color: var(--c9);}
 .main-button:active{transform: scale(0.9);}
+
+.main-big-button{background-color: var(--c3); border: none; padding: 12px 32px; font-size: 30px;
+	color: #FFF; border-radius: 8px; transition: 0.4s;}
+.main-big-button:hover{background-color: var(--c9);}
+.main-big-button:active{transform: scale(0.9);}
 
 .main-body{min-height: 600px;}

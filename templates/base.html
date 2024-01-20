@@ -16,20 +16,15 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='reset.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <div class="nav-bar">
-        <div class="wrapper">
-            <div class="nav-element"><a class="nav-text" href="{{ url_for('home') }}">Home</a></div>
-            <div class="nav-element"><a class="nav-text" href="{{ url_for('results') }}">Results</a></div>
-            <div class="nav-element"><a class="nav-text" href="{{ url_for('yt_transcribe') }}">Transcribe YouTube</a></div>
-            <div class="nav-element"><a class="nav-text" href="#">[About]</a></div>
-        </div>
-    </div>
-    
-    <div class="vertical-space"></div>
+<body>  
 
     <div class="main-body">
         <div class="wrapper flex-vert">
+
+            <div class="logo-holder">
+                <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}">
+            </div>
+
             {% for message in get_flashed_messages() %}
                 <div class="alert">{{ message }}</div>
             {% endfor %}
