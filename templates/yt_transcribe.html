@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<<<<<<< HEAD
     {% if transcript_results|length == 0 %}
+=======
+    <div class="mini-body-title">{% block title_card %} Transcribe a YouTube Video {% endblock %}</div>
+>>>>>>> bd77413186b1b58128fb4864c161dc81061dc337
     <form method="post">
         <input class="url-input-field" type="text" name="yt_url"
                placeholder="YouTube URL"
@@ -11,6 +15,7 @@
             <button class="main-button" type="submit">Transcribe</button>
         </div>
     </form>
+<<<<<<< HEAD
     {% else %}
         {% for transcript_result in transcript_results %}
             <div class='result_card'>
@@ -34,4 +39,22 @@
         </div>
     </form>
     {% endif %}
+=======
+    {% for transcript_result in transcript_results %}
+        <div class='result_card'>
+            <div class="result_card_top">
+                {{ transcript_result['title'] }}
+            </div>
+            <div class="result_card_mid"></div>
+            <div class="result_card_bot">
+                <div class="result_card_bot_left">
+                    Transcription
+                </div>
+                <div class="result_card_bot_right">
+                    {{ transcript_result['content'] }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+>>>>>>> bd77413186b1b58128fb4864c161dc81061dc337
 {% endblock %}
