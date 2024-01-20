@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="mini-body-title-holder mid-holder flex-hori">
-        <div class="mini-body-title">
-            {% block title %} Welcome to Video Transcriber {% endblock %}
-        </div>
+    
+    <div class="main-text-home-holder mid-holder flex-hori">
+        <img class="main-text-home-img" src="{{ url_for('static', filename='images/main_text_home.png')}}">
     </div>
+
     <div class="mid-holder flex-hori">
         <a href="{{ url_for('yt_transcribe') }}">
-            <button class="main-big-button" type="submit">Go</button>
+            <button class="main-big-button" type="submit">Get Started</button>
         </a>
     </div>
 {% endblock %}
