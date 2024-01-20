@@ -19,17 +19,14 @@
                 </div>
                 <div class="result_card_mid"></div>
                 <div class="result_card_bot">
-
-                
-                        {{ transcript_result['content'] }}
-
+                    {{ transcript_result['content'] }}
                 </div>
             </div>
         {% endfor %}
     <form method="post">
         <div class="mid-holder flex-hori">
-            <button class="main-button" type="submit">Return</button>
-            <button class="main-button" type="submit">Download Text File</button>
+            <button class="main-button" name="return_code" type="submit">Return</button>
+            <button class="main-button" name="download_code" type="submit">Download Text File</button>
         </div>
     </form>
     {% endif %}

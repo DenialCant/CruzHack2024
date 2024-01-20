@@ -27,8 +27,11 @@ def yt_transcribe():
             else:
                 flash('Error: YouTube Link is not working')
         else:
-            transcript_results.clear()
-        
+            if 'return_code' in request.form:
+                transcript_results.clear()
+            elif 'download_code' in request.form:
+                print("FUCKKKKKKKKKKKKKKKKKKKKKKKKKKKKk")
+                 
     return render_template('yt_transcribe.html', transcript_results=transcript_results)
 
 if __name__ == '__main__':

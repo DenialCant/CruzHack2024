@@ -73,12 +73,12 @@ body::-webkit-scrollbar {display: none;}
 	border-radius: 4px;
 }
 .main-button{background-color: var(--c3); border: none; padding: 10px; font-size: 16px;
-	color: #FFF; border-radius: 4px; transition: 0.4s;}
+	color: #FFF; border-radius: 4px; transition: 0.4s; margin: 4px;}
 .main-button:hover{background-color: var(--c9);}
 .main-button:active{transform: scale(0.9);}
 
 .main-big-button{background-color: var(--c3); border: none; padding: 12px 32px; font-size: 30px;
-	color: #FFF; border-radius: 8px; transition: 0.4s;}
+	color: #FFF; border-radius: 8px; transition: 0.4s; margin: 4px;}
 .main-big-button:hover{background-color: var(--c9);}
 .main-big-button:active{transform: scale(0.9);}
 
