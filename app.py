@@ -6,8 +6,7 @@ import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '3f500e5c4689bb1221d1bbc545931d898f30c1d9c2a9ad6a'
 
-transcript_results = [{'title': 'Extra Long Video Title',
-                       'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}]
+transcript_results = []
 
 @app.route('/')
 def home():
@@ -23,15 +22,15 @@ def yt_transcribe():
         title = request.form['yt_url']
 
         file_name = yt_to_mp3(title)
-        
-        tran_rs = (audio_to_text(file_name))
-
-        if not title:
-            flash('YouTube Link is required!')
-        else:
+        if file_name != 0:
+            tran_rs = (audio_to_text(file_name))
             transcript_results.append({'title': title, 'content': tran_rs})
             os.remove(file_name)
             return redirect(url_for('results'))
+        else:
+            flash('Error: YouTube Link is not working')
+        
+            
         
     return render_template('yt_transcribe.html')
 
