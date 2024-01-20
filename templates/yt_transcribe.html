@@ -23,11 +23,13 @@
                 </div>
             </div>
         {% endfor %}
-    <form method="post">
-        <div class="mid-holder flex-hori">
-            <button class="main-button" name="return_code" type="submit">Return</button>
-            <button class="main-button" name="download_code" type="submit">Download Text File</button>
-        </div>
-    </form>
+    <div class="mid-holder flex-hori">
+        <form method="post">    
+            <button class="main-button" name="return_code" type="submit">Return</button>       
+        </form>
+        <form action="/download" method="get">
+            <button class="main-button" type="submit" name = "download_code">Download File</button>
+        </form>
+    </div>
     {% endif %}
 {% endblock %}
