@@ -1,0 +1,72 @@
+:root{
+	--c0: #001A38;
+	--c1: #00224E;
+	--c2: #003367;
+	--c3: #004489;
+	--c9: #7891ec;
+}
+
+@font-face{font-family: WebFont; src: url('/static/fonts/Comfortaa.ttf');}
+
+html{min-width: 440px; scroll-behavior: smooth;}
+body{
+	font-family: WebFont; cursor: default;
+	background: var(--c1); color: #FFF;
+}
+body::-webkit-scrollbar {display: none;}
+*{box-sizing: border-box; outline: none; font: inherit;}
+
+.wrapper{margin-left: 10px; margin-right: 10px; display: flex;}
+.wrapper-body{margin-left: 10px; margin-right: 10px;}
+@media (min-width: 768px) {
+	.wrapper{margin-left: 6%; margin-right: 6%;}
+	.wrapper-body{margin-left: 6%; margin-right: 6%;}
+}
+@media (min-width: 992px) {
+	.wrapper{margin-left: 8%; margin-right: 8%;}
+	.wrapper-body{margin-left: 6%; margin-right: 6%;}
+}
+@media (min-width: 1200px) {
+	.wrapper{margin-left: 12%; margin-right: 12%;}
+	.wrapper-body{margin-left: 12%; margin-right: 12%;}
+}
+.normal-text{font-size: 14px; line-height: 20px;}
+.vertical-space{height: 2px; margin: 10px 0px 10px 0px; background-color: #FFFFFF;}
+
+.nav-bar{width: 100%; display: inline-block; font-size: 24px; line-height: 60px;
+	padding: 4px 0px 4px 0px;}
+.nav-element{font-size: 20px; line-height: 24px; padding: 10px;
+	background-color: var(--c3);
+	border-radius: 4px;
+	margin: 4px;
+	transition: 0.4s;
+}
+.nav-element:hover{background-color: var(--c9);}
+.nav-text{text-decoration: none; color: #FFFFFF;}
+
+.flex-vert{flex-direction: column;}
+
+.mini-body-title{width: 100%; font-size: 20px; line-height: 40px;}
+
+.result_card{width: 100%; background-color: var(--c3); padding: 10px; border-radius: 4px;
+	display: flex; flex-direction: column; margin: 4px 0px;}
+.result_card_top{font-size: 24px;}
+.result_card_mid{height: 2px; margin: 6px 0px 6px 0px; background-color: #999999;}
+.result_card_bot{display: flex; flex-direction: row;}
+.result_card_bot_left{font-size: 16px;width: 160px;}
+.result_card_bot_right{font-size: 14px;}
+
+.url-input-field{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.main-button{background-color: var(--c3); border: none; padding: 10px;
+	color: #FFF; border-radius: 4px; transition: 0.4s;}
+.main-button:hover{background-color: var(--c9);}
+.main-button:active{transform: scale(0.9);}
+
+.main-body{min-height: 600px;}

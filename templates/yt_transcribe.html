@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Transcribe a YouTube Video {% endblock %}</h1>
+    <div class="mini-body-title">{% block title %} Transcribe a YouTube Video {% endblock %}</div>
     <form method="post">
         <label for="yt_url">YouTube URL</label>
         <br>
-        <input type="text" name="yt_url"
+        <input class="url-input-field" type="text" name="yt_url"
                placeholder="YouTube Link"
                value="{{ request.form['title'] }}"></input>
         <br>
 
-        <button type="submit">Transcribe</button>
+        <button class="main-button" type="submit">Transcribe</button>
     </form>
 {% endblock %}

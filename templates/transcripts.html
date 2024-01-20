@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Transcription Results {% endblock %}</h1>
+    <div class="mini-body-title">{% block title %} Transcription Results {% endblock %}</div>
     {% for transcript_result in transcript_results %}
-        <div class='trs_result'>
-            <h3>{{ transcript_result['title'] }}</h3>
-            <p>{{ transcript_result['content'] }}</p>
+        <div class='result_card'>
+            <div class="result_card_top">
+                {{ transcript_result['title'] }}
+            </div>
+            <div class="result_card_mid"></div>
+            <div class="result_card_bot">
+                <div class="result_card_bot_left">
+                    Transcription
+                </div>
+                <div class="result_card_bot_right">
+                    {{ transcript_result['content'] }}
+                </div>
+            </div>
         </div>
     {% endfor %}
 {% endblock %}
