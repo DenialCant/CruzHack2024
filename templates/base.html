@@ -18,10 +18,16 @@
 </head>
 <body>
     <div class="header-bar flex-hori">
+    
         <div class="logo-holder">
-            <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}">
+            <a href="{{ url_for('home') }}">
+                <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}">
+            </a>  
         </div>
     </div>
+
+    <div class="vertical-space"></div>
+    <div class="vertical-space"></div>
 
     <div class="main-body">
         <div class="wrapper flex-vert">

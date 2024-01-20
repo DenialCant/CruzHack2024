@@ -2,9 +2,16 @@
 
 {% block content %}
     {% if transcript_results|length == 0 %}
+
+    <div class="body-big-txt-holder flex-hori mid-holder">
+        <div class="body-big-txt-txt text-align-center">
+            Convert Video to Text
+        </div>
+    </div>
+
     <form method="post">
         <input class="url-input-field" type="text" name="yt_url"
-               placeholder="YouTube URL"
+               placeholder="Enter YouTube URL here"
                value="{{ request.form['title'] }}"></input>
         <br>
         <div class="mid-holder flex-hori">

@@ -6,8 +6,8 @@ import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '3f500e5c4689bb1221d1bbc545931d898f30c1d9c2a9ad6a'
 
-transcript_results = []
-# transcript_results = [{'title': 'title', 'content': 'tran_rs'}]
+# transcript_results = []
+transcript_results = [{'title': 'title', 'content': 'tran_rs'}]
 
 @app.route('/')
 def home():

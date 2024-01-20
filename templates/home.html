@@ -1,10 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
-    <div class="main-text-home-holder mid-holder flex-hori">
-        <img class="main-text-home-img" src="{{ url_for('static', filename='images/main_text_home.png')}}">
+
+    <div class="body-big-txt-holder flex-hori mid-holder">
+        <div class="body-big-txt-txt text-align-center">
+            Video Notetaker
+        </div>
     </div>
+
+    <div class="vertical-space"></div>
+
+    <div class="body-mid-txt-holder flex-hori mid-holder">
+        <div class="body-mid-txt-txt text-align-center">
+            Tired of having to watch video lectures?
+        </div>
+    </div>
+
+    <div class="body-mid-txt-holder flex-hori mid-holder">
+        <div class="body-mid-txt-txt text-align-center">
+            Enhance productivity with our AI vidoe to note conveter
+        </div>
+    </div>
+    
+    <div class="vertical-space"></div>
+    <div class="vertical-space"></div>
+
+    <div class="body-small-txt-holder flex-hori mid-holder">
+        <div class="body-small-txt-txt text-align-center">
+            To get started, simply just enter a youtube URL or MP3 file and watch the magic happens.
+        </div>
+    </div>
+
+    <div class="vertical-space"></div>
 
     <div class="mid-holder flex-hori">
         <a href="{{ url_for('yt_transcribe') }}">
