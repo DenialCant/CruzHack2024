@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="mini-body-title">{% block title %} Transcribe a YouTube Video {% endblock %}</div>
+    <div class="mini-body-title">{% block title_card %} Transcribe a YouTube Video {% endblock %}</div>
     <form method="post">
         <label for="yt_url">YouTube URL</label>
         <br>
@@ -12,4 +12,20 @@
 
         <button class="main-button" type="submit">Transcribe</button>
     </form>
+    {% for transcript_result in transcript_results %}
+        <div class='result_card'>
+            <div class="result_card_top">
+                {{ transcript_result['title'] }}
+            </div>
+            <div class="result_card_mid"></div>
+            <div class="result_card_bot">
+                <div class="result_card_bot_left">
+                    Transcription
+                </div>
+                <div class="result_card_bot_right">
+                    {{ transcript_result['content'] }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}

@@ -32,7 +32,7 @@ def yt_transcribe():
         
             
         
-    return render_template('yt_transcribe.html')
+    return render_template('yt_transcribe.html', transcript_results=transcript_results)
 
 if __name__ == '__main__':
     app.run(debug=True)
