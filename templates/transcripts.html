@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Transcription Results {% endblock %}</h1>
+    {% for transcript_result in transcript_results %}
+        <div class='trs_result'>
+            <h3>{{ transcript_result['title'] }}</h3>
+            <p>{{ transcript_result['content'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
