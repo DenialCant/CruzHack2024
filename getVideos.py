@@ -3,9 +3,10 @@ from pytube import YouTube
 import os 
 
 
-def yt_to_mp3(url):
-	video = yt.streams.filter(only_audio=True).first()
-	print("Enter the destination (leave blank for current directory)") 
+def yt_to_mp3(url_text):
+	URL =  YouTube(url_text)
+	video = URL.streams.filter(only_audio=True).first()
+
 	destination = 'Videos/'
 
 	# download the file 
@@ -14,14 +15,19 @@ def yt_to_mp3(url):
 	# save the file 
 	base, ext = os.path.splitext(out_file) 
 	new_file = base + '.mp3'
-	os.rename(out_file, new_file) 
-	print("newfile: " + new_file)
-	# result of success 
-	print(yt.title + " has been successfully downloaded.")
-	return new_file
+ 
+	try:
+		os.rename(out_file, new_file)
+	except FileExistsError:
+		os.remove(base + ext)
+		print("File alreadly exists. Pulling that file...")
+	finally:
+		# result of success 
+		print(URL.title + " has been successfully downloaded.")
+		return new_file
 # url input from user 
-yt = YouTube( 
-	str(input("Enter the URL of the video you want to download: \n>> "))) 
+# yt = YouTube( 
+# 	str(input("Enter the URL of the video you want to download: \n>> "))) 
 
 # extract only audio 
 

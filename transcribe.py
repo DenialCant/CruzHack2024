@@ -20,6 +20,17 @@ def audio_to_text(url):
     # FILE_URL = './path/to/file.mp3'
     transcriber = aai.Transcriber()
     transcript = transcriber.transcribe(FILE_URL)
-    return transcript.text
+    
+    
+    config = aai.TranscriptionConfig(
+    summarization=True,
+    summary_model=aai.SummarizationModel.informative,
+    summary_type=aai.SummarizationType.bullets
+    )
+
+    transcript = aai.Transcriber().transcribe(FILE_URL, config)
+
+
+    return transcript.summary
 
 # print(transcript.text)
