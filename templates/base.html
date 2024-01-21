@@ -5,12 +5,7 @@
     <title>{% block title %} {% endblock %} - FlaskApp</title>
     <style>
 
-        .alert {
-            padding: 20px;
-            margin: 5px;
-            color: #970020;
-            background-color: #ffd5de;
-        }
+        
 
     </style>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='reset.css') }}">
@@ -29,13 +24,15 @@
     <div class="vertical-space"></div>
     <div class="vertical-space"></div>
 
-    <div class="main-body">
-        <div class="wrapper flex-vert">
-
-            {% for message in get_flashed_messages() %}
-                <div class="alert">{{ message }}</div>
-            {% endfor %}
+    <div class="main-body" id="main-body">
+        <div class="wrapper flex-vert" id="content-to-disable">
             {% block content %} {% endblock %}
+            
+            {% for message in get_flashed_messages() %}
+                <div class="alert-box">{{ message }}</div>
+            {% endfor %}
+
+            {% block script %} {% endblock %}
         </div>
     </div>
 </body>

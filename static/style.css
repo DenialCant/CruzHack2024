@@ -6,6 +6,12 @@
 	--c9: #a27b5e;
 }
 
+@keyframes loader-spin{
+	0% {transform: rotate(0deg);}
+	50% {transform: rotate(180deg);}
+	100% {transform: rotate(360deg);}
+}
+
 @font-face{font-family: FontComfortaa; src: url('/static/fonts/Comfortaa.ttf');}
 @font-face{font-family: FontBellefair; src: url('/static/fonts/Bellefair.ttf');}
 
@@ -54,9 +60,6 @@ body::-webkit-scrollbar {display: none;}
 
 .result_card{width: 100%; background-color: var(--c3); padding: 20px; border-radius: 4px;
 	display: flex; flex-direction: column; margin: 4px 0px;}
-.result_card_top{font-size: 24px;}
-.result_card_mid{height: 2px; margin: 10px 0px 16px 0px; background-color: #999999;}
-.result_card_bot{display: flex; flex-direction: row;}
 
 .url-input-field{
 	width: 100%;
@@ -67,13 +70,47 @@ body::-webkit-scrollbar {display: none;}
 	border-radius: 4px;
 }
 .main-button{background-color: var(--c3); border: none; padding: 10px; font-size: 18px;
-	color: #FFF; border-radius: 4px; transition: 0.4s; margin: 4px;}
+	color: #FFF; border-radius: 4px; transition: 0.4s; margin: 6px 8px;}
 .main-button:hover{background-color: var(--c9);}
 .main-button:active{transform: scale(0.9);}
 
 .main-big-button{background-color: var(--c3); border: none; padding: 12px 32px; font-size: 24px;
-	color: #FFF; border-radius: 8px; transition: 0.4s; margin: 4px;}
+	color: #FFF; border-radius: 8px; transition: 0.4s; margin: 6px 8px;}
 .main-big-button:hover{background-color: var(--c9);}
 .main-big-button:active{transform: scale(0.9);}
+
+.loader-box{
+	position: relative; width: 200px;
+	padding: 0px 10px;
+	left: 50%; top: 50%;
+	transform: translateX(-50%) translateY(50%);
+}
+
+.loader-holder{
+	width: 180px; height: 180px;
+	padding: 30px;
+	justify-content: center;
+}
+
+.loader{
+	border: 2px solid #CCCCCC;
+	width: 120px; height: 120px;
+	animation: loader-spin 2s ease-in-out infinite;
+}
+
+.loader-text{
+	text-align: center;
+	font-family: FontComfortaa; font-size: 20px;
+}
+
+}
+
+.alert-box{
+	padding: 12px 20px;
+	margin: 8px 0;
+	color: #970020;
+	border-radius: 4px;
+	background-color: #ffd5de;
+}
 
 .main-body{min-height: 400px;}

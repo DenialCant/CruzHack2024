@@ -25,7 +25,7 @@ def yt_transcribe():
             title = request.form['yt_url']
 
             file_name, name = yt_to_mp3(title)
-            if file_name != 0:
+            if file_name != "":
                 tran_rs = audio_to_text(file_name)
                 transcript_results.append({'title': name, 'content': tran_rs})
                 os.remove(file_name)

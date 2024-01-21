@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     {% if transcript_results|length == 0 %}
 
     <div class="body-big-txt-holder flex-hori mid-holder">
@@ -9,25 +10,26 @@
         </div>
     </div>
 
+    <div class="vertical-space"></div>
+
     <form method="post">
         <input class="url-input-field" type="text" name="yt_url"
                placeholder="Enter YouTube URL here"
                value="{{ request.form['title'] }}"></input>
         <br>
         <div class="mid-holder flex-hori">
-            <button class="main-button" type="submit">Transcribe</button>
+            <button class="main-button" type="submit" onclick="disable_and_loader()">Transcribe</button>
         </div>
     </form>
     {% else %}
         {% for transcript_result in transcript_results %}
-            <div class='result_card'>
-                <div class="result_card_top">
+            <div class="body-mid-txt-holder">
+                <div class="body-mid-txt-txt">
                     {{ transcript_result['title'] }}
                 </div>
-                <div class="result_card_mid"></div>
-                <div class="result_card_bot">
-                    {{ transcript_result['content'] }}
-                </div>
+            </div>
+            <div class='result_card'>
+                {{ transcript_result['content'] }}
             </div>
         {% endfor %}
     <div class="mid-holder flex-hori">
@@ -35,8 +37,28 @@
             <button class="main-button" name="return_code" type="submit">Return</button>       
         </form>
         <form action="/download" method="get">
-            <button class="main-button" type="submit" name = "download_code">Download File</button>
+            <button class="main-button" type="submit" name="download_code">Download File</button>
         </form>
     </div>
     {% endif %}
+    
+{% endblock %}
+
+{% block script %}
+    <script>
+        function disable_and_loader() {
+            document.getElementById('content-to-disable').style.display = 'none';
+
+            let loader_box = document.createElement("div"); loader_box.className = "loader-box";
+            let loader = document.createElement("div"); loader.className = "loader";
+            let loader_holder = document.createElement("div"); loader_holder.className = "loader-holder";
+            let loader_text = document.createElement("p"); loader_text.className = "loader-text";
+            loader_text.innerHTML = "Loading...";
+
+            loader_holder.appendChild(loader);
+            loader_box.appendChild(loader_holder);
+            loader_box.appendChild(loader_text);
+            document.getElementById('main-body').appendChild(loader_box);
+        }
+    </script>
 {% endblock %}

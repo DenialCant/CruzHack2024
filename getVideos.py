@@ -8,7 +8,7 @@ def yt_to_mp3(url_text):
 		URL =  YouTube(url_text)
 	except Exception:
 		print("hello")
-		return 0
+		return "", ""
 	else:
 		video = URL.streams.filter(only_audio=True).first()
 
