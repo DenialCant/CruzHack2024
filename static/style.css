@@ -7,9 +7,16 @@
 }
 
 @keyframes loader-spin{
-	0% {transform: rotate(0deg);}
-	50% {transform: rotate(180deg);}
-	100% {transform: rotate(360deg);}
+	0% {transform: translateX(-40px) translateY(-40px) rotate(270deg); 
+		border: 2px solid #CCCCCC; border-radius: 4px;}
+	25% {transform: translateX(40px) translateY(-40px) rotate(90deg);
+		border: 30px solid #CCCCCC; border-radius: 50%;}
+	50% {transform: translateX(40px) translateY(40px) rotate(0deg);
+		border: 30px solid #CCCCCC; border-radius: 4px;}
+	75% {transform: translateX(-40px) translateY(40px) rotate(-180deg);
+		border: 2px solid #CCCCCC; border-radius: 50%;}
+	100% {transform: translateX(-40px) translateY(-40px) rotate(-270deg);
+		border: 2px solid #CCCCCC; border-radius: 4px;}
 }
 
 @font-face{font-family: FontComfortaa; src: url('/static/fonts/Comfortaa.ttf');}
@@ -80,29 +87,27 @@ body::-webkit-scrollbar {display: none;}
 .main-big-button:active{transform: scale(0.9);}
 
 .loader-box{
-	position: relative; width: 200px;
+	position: relative; width: 180px;
 	padding: 0px 10px;
 	left: 50%; top: 50%;
 	transform: translateX(-50%) translateY(50%);
 }
 
 .loader-holder{
-	width: 180px; height: 180px;
-	padding: 30px;
+	width: 160px; height: 160px;
+	padding: 50px;
 	justify-content: center;
 }
 
 .loader{
 	border: 2px solid #CCCCCC;
-	width: 120px; height: 120px;
-	animation: loader-spin 2s ease-in-out infinite;
+	width: 60px; height: 60px;
+	animation: loader-spin 2.5s ease-in-out infinite;
 }
 
 .loader-text{
-	text-align: center;
+	text-align: center; line-height: 40px;
 	font-family: FontComfortaa; font-size: 20px;
-}
-
 }
 
 .alert-box{

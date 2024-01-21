@@ -29,7 +29,9 @@
                 </div>
             </div>
             <div class='result_card'>
-                {{ transcript_result['content'] }}
+                {% for tr_rs_idv in transcript_result['content'] %}
+                    {{ tr_rs_idv }}<br><br>
+                {% endfor %}
             </div>
         {% endfor %}
     <div class="mid-holder flex-hori">

@@ -1,14 +1,13 @@
 # importing packages 
 from pytube import YouTube 
-import os 
-
+import os
 
 def yt_to_mp3(url_text):
 	try:
 		URL =  YouTube(url_text)
 	except Exception:
 		print("hello")
-		return "", ""
+		return 0, 0
 	else:
 		video = URL.streams.filter(only_audio=True).first()
 
@@ -24,7 +23,10 @@ def yt_to_mp3(url_text):
 		try:
 			os.rename(out_file, new_file)
 		except FileExistsError:
-			os.remove(base + ext)
+			try:
+				os.remove(base + ext)
+			finally:
+				print("ERROR. MP3 not found")
 			print("File alreadly exists. Pulling that file...")
 		finally:
 			# result of success 
