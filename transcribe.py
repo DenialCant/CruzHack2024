@@ -42,10 +42,26 @@ def download_notes(title, body):
 
 
 def summary_parser(input_string):
-    result_list = []
-    elements = input_string.split("-")
+    result_list = input_string.split("-")
     
-    if len(elements) > 1:
-        result_list.extend(elements[1:])
+    # Remove leading and trailing whitespaces, including newline characters
+    result_list = [element.strip("\n") for element in result_list]
+    
+    # Remove empty strings from the list
+    result_list = [element for element in result_list if element]
+    
+    # Add back the hyphen to each element except the last one
+    result_list = ["-" + element  for element in result_list[:-1]] + [result_list[-1]]
+    
     print(result_list)
+    print(len(result_list))
     return result_list
+
+x = """- This is cs two two four four advanced algorithms. We have a mailing list. There's a yellow sheet of paper that's going around. If you want to contact us, you should email the staff at seas harvard. edu.
+- In wordram, assume that given xy fitting in a word can do basically all the things that you can do in, say, c. There could be integer overflow, in which case we'll get the overflow of the correct answer. But you can simulate multiplying bigger numbers using in the word ram.
+- The basic idea is some kind of divide and conquer. The idea behind van mdeboaz trees is that we will know if x lives in the data structure. How would you search for the predecessor of X in this recursive data structure?
+- In any of the if cases, you'll have at most one recursive call. Elements in the array is constant. In constant time, you can follow a pointer and read the value in that memory address. If you treat the min as the same as any other object, then there will be times when you have to recursively insert into the summary. And that will make things w.
+- The space of the venom device data structure is not great. So what could you imagine doing instead? What would you do with this hashing in order to improve the space? It turns out that it's possible to.
+- There's actually a paper that shows a matching lower bound which shows that you can never do better than the min of de boaz and fusion trees. These are known to be optimal for linear or for nearly linear space data structures. Any final questions before next time we'll see fusion trees?
+"""
+summary_parser(x)
