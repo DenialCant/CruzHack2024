@@ -3,7 +3,7 @@
 {% block content %}
 
     <div class="body-big-txt-holder flex-hori mid-holder">
-        <div class="body-big-txt-txt text-align-center">
+        <div class="body-big-txt-txt text-align-center appear-animation">
             Video Notetaker
         </div>
     </div>
@@ -11,13 +11,13 @@
     <div class="vertical-space"></div>
 
     <div class="body-mid-txt-holder flex-hori mid-holder">
-        <div class="body-mid-txt-txt text-align-center">
+        <div class="body-mid-txt-txt text-align-center appear-animation" style="animation-delay: 0.1s;">
             Tired of having to watch video lectures?
         </div>
     </div>
 
     <div class="body-mid-txt-holder flex-hori mid-holder">
-        <div class="body-mid-txt-txt text-align-center">
+        <div class="body-mid-txt-txt text-align-center appear-animation" style="animation-delay: 0.2s;">
             Enhance productivity with our AI video to note converter
         </div>
     </div>
@@ -26,7 +26,7 @@
     <div class="vertical-space"></div>
 
     <div class="body-small-txt-holder flex-hori mid-holder">
-        <div class="body-small-txt-txt text-align-center">
+        <div class="body-small-txt-txt text-align-center appear-animation" style="animation-delay: 0.3s;">
             To get started, simply just enter a youtube URL and watch the magic happens.
         </div>
     </div>
@@ -35,7 +35,9 @@
 
     <div class="mid-holder flex-hori">
         <a href="{{ url_for('yt_transcribe') }}">
-            <button class="main-big-button" type="submit">Get Started</button>
+            <button class="main-big-button appear-animation" style="animation-delay: 0.4s;" type="submit">
+                Get Started
+            </button>
         </a>
     </div>
 {% endblock %}

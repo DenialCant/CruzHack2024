@@ -5,7 +5,7 @@
     {% if transcript_results|length == 0 %}
 
     <div class="body-big-txt-holder flex-hori mid-holder">
-        <div class="body-big-txt-txt text-align-center">
+        <div class="body-big-txt-txt text-align-center appear-animation">
             Convert Video to Text
         </div>
     </div>
@@ -13,22 +13,23 @@
     <div class="vertical-space"></div>
 
     <form method="post">
-        <input class="url-input-field" type="text" name="yt_url"
+        <input class="url-input-field appear-animation" style="animation-delay: 0.1s;" type="text" name="yt_url"
                placeholder="Enter YouTube URL here"
                value="{{ request.form['title'] }}"></input>
         <br>
         <div class="mid-holder flex-hori">
-            <button class="main-button" type="submit" onclick="disable_and_loader()">Transcribe</button>
+            <button class="main-button appear-animation" style="animation-delay: 0.2s;"
+                type="submit" onclick="disable_and_loader()">Transcribe</button>
         </div>
     </form>
     {% else %}
         {% for transcript_result in transcript_results %}
             <div class="body-mid-txt-holder">
-                <div class="body-mid-txt-txt">
+                <div class="body-mid-txt-txt appear-animation">
                     {{ transcript_result['title'] }}
                 </div>
             </div>
-            <div class='result_card'>
+            <div class="result_card appear-animation" style="animation-delay: 0.1s;">
                 {% for tr_rs_idv in transcript_result['content'] %}
                     {{ tr_rs_idv }}<br><br>
                 {% endfor %}
@@ -36,10 +37,12 @@
         {% endfor %}
     <div class="mid-holder flex-hori">
         <form method="post">    
-            <button class="main-button" name="return_code" type="submit">Return</button>       
+            <button class="main-button appear-animation" style="animation-delay: 0.2s;"
+            name="return_code" type="submit">Return</button>       
         </form>
         <form action="/download" method="get">
-            <button class="main-button" type="submit" name="download_code">Download File</button>
+            <button class="main-button appear-animation" style="animation-delay: 0.2s;"
+            type="submit" name="download_code">Download File</button>
         </form>
     </div>
     {% endif %}
@@ -54,7 +57,7 @@
             let loader_box = document.createElement("div"); loader_box.className = "loader-box";
             let loader = document.createElement("div"); loader.className = "loader";
             let loader_holder = document.createElement("div"); loader_holder.className = "loader-holder";
-            let loader_text = document.createElement("p"); loader_text.className = "loader-text";
+            let loader_text = document.createElement("p"); loader_text.className = "loader-text appear-animation";
             loader_text.innerHTML = "Loading...";
 
             loader_holder.appendChild(loader);
