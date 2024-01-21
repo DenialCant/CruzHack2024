@@ -6,8 +6,8 @@ import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '3f500e5c4689bb1221d1bbc545931d898f30c1d9c2a9ad6a'
 
-# transcript_results = []
-transcript_results = [{'title': 'title', 'content': 'tran_rs'}]
+transcript_results = []
+#transcript_results = [{'title': 'title', 'content': 'tran_rs'}]
 
 @app.route('/')
 def home():
@@ -28,7 +28,10 @@ def yt_transcribe():
             if file_name != 0:
                 tran_rs = audio_to_text(file_name)
                 transcript_results.append({'title': name, 'content': tran_rs})
-                os.remove(file_name)
+                try:
+                    os.remove(file_name)
+                finally:
+                    print("File DOE")
             else:
                 flash('Error: YouTube Link is not working')
         else:

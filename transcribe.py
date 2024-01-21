@@ -28,8 +28,8 @@ def audio_to_text(url):
 
     transcript = aai.Transcriber().transcribe(FILE_URL, config)
 
-
-    return transcript.summary
+    print("SUMMARY" + transcript.summary)
+    return summary_parser(transcript.summary)
 
 def download_notes(title, body):
 
@@ -39,3 +39,13 @@ def download_notes(title, body):
         file.write(content)
 
     return send_file('sample_file.txt', as_attachment=True)
+
+
+def summary_parser(input_string):
+    result_list = []
+    elements = input_string.split("-")
+    
+    if len(elements) > 1:
+        result_list.extend(elements[1:])
+    print(result_list)
+    return result_list
