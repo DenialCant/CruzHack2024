@@ -7,11 +7,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '3f500e5c4689bb1221d1bbc545931d898f30c1d9c2a9ad6a'
 
 transcript_results = []
-#transcript_results = [{'title': 'title', 'content': 'tran_rs'}]
 
 @app.route('/')
 def home():
-    transcript_results.clear();
+    transcript_results.clear()
     return render_template('home.html')
 
 name = ""
@@ -45,8 +44,6 @@ def yt_transcribe():
 
 @app.route('/download')
 def download_file():
-    # title = "Sample Title"
-    # body = "This is the body of the text file."
     global name, tran_rs
     content = f"{name}\n\n{tran_rs}"
 

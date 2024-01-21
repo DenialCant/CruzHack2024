@@ -48,7 +48,9 @@ body::-webkit-scrollbar {display: none;}
 .vertical-space{height: 20px;}
 
 .logo-holder{justify-content: center; padding: 10px 20px;}
-.logo{height: 80px;}
+.logo{height: 80px; transition: 0.4s;}
+.logo:hover{transform: scale(1.02);}
+.logo:active{transform: scale(0.98);}
 
 .flex-vert{display: flex; flex-direction: column;}
 .flex-hori{display: flex; flex-direction: row;}

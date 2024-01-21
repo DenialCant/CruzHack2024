@@ -32,11 +32,6 @@ def yt_to_mp3(url_text):
 			# result of success 
 			print(URL.title + " has been successfully downloaded.")
 			return new_file, URL.title
-# url input from user 
-# yt = YouTube( 
-# 	str(input("Enter the URL of the video you want to download: \n>> "))) 
-
-# extract only audio 
 
 
 
